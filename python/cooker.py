@@ -16,7 +16,8 @@ def cook(recipes):
 if __name__ == '__main__':
 
     recipes = [
-        'recipes.recipe_base'
+        'recipes.recipe_base',
+        'recipes.recipe_loop'
     ]
 
     cook(recipes)
