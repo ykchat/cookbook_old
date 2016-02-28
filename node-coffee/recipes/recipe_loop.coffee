@@ -1,12 +1,12 @@
 #!/usr/bin/env coffee
 
-module.exports.title = ->
+title = ->
 
     console.log '# Loop'
 
     return
 
-module.exports.cook = ->
+cook = ->
 
     nums = [0...5]
     pow = (x) -> 
@@ -31,3 +31,7 @@ module.exports.cook = ->
     console.log results
 
     return
+
+module.exports =
+    title: title
+    cook: cook

@@ -2,13 +2,13 @@
 
 moment = require 'moment-timezone'
 
-module.exports.title = ->
+title = ->
 
     console.log '# Base'
 
     return
 
-module.exports.cook = ->
+cook = ->
 
     ## 変数展開
 
@@ -25,3 +25,7 @@ module.exports.cook = ->
     console.log now.format()
 
     return
+
+module.exports =
+    title: title
+    cook: cook
