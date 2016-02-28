@@ -13,7 +13,8 @@ cook = (recipes) ->
     return
 
 recipes = [
-    './recipes/recipe_base'
+    './recipes/recipe_base',
+    './recipes/recipe_loop'
 ]
 
 cook recipes
