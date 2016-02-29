@@ -12,6 +12,6 @@ cook = function(recipes) {
   }
 };
 
-recipes = ['./recipes/recipe_base', './recipes/recipe_loop'];
+recipes = ['./cookbook/recipe_base', './cookbook/recipe_loop'];
 
 cook(recipes);

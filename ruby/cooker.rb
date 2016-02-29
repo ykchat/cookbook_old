@@ -17,8 +17,8 @@ end
 if __FILE__ == $0
 
     recipes = [
-        './recipes/recipe_base',
-        './recipes/recipe_loop'
+        './cookbook/recipe_base',
+        './cookbook/recipe_loop'
     ]
 
     cook recipes
