@@ -1,11 +1,11 @@
 {
-  "name": "recipe-node-coffee",
+  "name": "cookbook-node-coffee",
   "version": "0.0.1",
-  "description": "Recipes for coffeescript",
+  "description": "Cookbook for coffeescript",
   "main": "cooker.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ykchat/recipe-code.git"
+    "url": "https://github.com/ykchat/cookbook.git"
   },
   "author": "ykchat",
   "license": "MIT",
