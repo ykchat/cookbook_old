@@ -1,9 +1,20 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import logging
+
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter(
+    "%(asctime)s [%(threadName)-10s] %(module)s: %(levelname)s %(message)s"
+))
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+
 def title():
 
-    print('# Loop')
+    logger.debug('# Loop')
 
 def cook():
 
@@ -16,17 +27,17 @@ def cook():
     results = list()
     for num in nums:
         results.append(pow(num))
-    print(results)
+    logger.debug(results)
 
     ## 内包表記
 
     results = [pow(num) for num in nums]
-    print(results)
+    logger.debug(results)
 
     ## map関数
 
     results = list(map(pow, nums))
-    print(results)
+    logger.debug(results)
 
 if __name__ == '__main__':
 

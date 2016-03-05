@@ -17,7 +17,8 @@ if __name__ == '__main__':
 
     recipes = [
         'cookbook.recipe_base',
-        'cookbook.recipe_loop'
+        'cookbook.recipe_loop',
+        'cookbook.recipe_thread'
     ]
 
     cook(recipes)

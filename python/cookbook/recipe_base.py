@@ -1,12 +1,22 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import logging
 import datetime;
 import pytz
 
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter(
+    "%(asctime)s [%(threadName)-10s] %(module)s: %(levelname)s %(message)s"
+))
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
+
 def title():
 
-    print('# Base')
+    logger.debug('# Base')
 
 def cook():
 
@@ -14,15 +24,15 @@ def cook():
 
     name = 'Recipe'
     hello = "Hello %s!" % (name)
-    print(hello)
+    logger.debug(hello)
 
     ## 現在時刻
 
     now = datetime.datetime.now(tz=pytz.utc)
-    print(now)
+    logger.debug(now)
 
     now = datetime.datetime.now(tz=pytz.timezone('Asia/Tokyo'))
-    print(now)
+    logger.debug(now)
 
 if __name__ == '__main__':
 
