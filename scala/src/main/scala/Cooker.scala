@@ -1,6 +1,10 @@
+import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
 import scala.reflect.runtime.universe._
 
 object Cooker {
+
+    val logger = Logger(LoggerFactory getLogger this.getClass)
 
     def cook(recipes: List[String]) = {
 
@@ -9,7 +13,7 @@ object Cooker {
             val recipeMod = __loadModule(recipe)
             val recipeObj = __invokeMethod(recipeMod, "apply")
 
-            println("")
+            logger debug ""
             __invokeMethod(recipeObj, "title")
             __invokeMethod(recipeObj, "cook")
 
@@ -59,7 +63,8 @@ object Cooker {
 
         val recipes = List(
             "cookbook.RecipeBase",
-            "cookbook.RecipeLoop"
+            "cookbook.RecipeLoop",
+            "cookbook.RecipeThread"
         )
 
         Cooker cook recipes

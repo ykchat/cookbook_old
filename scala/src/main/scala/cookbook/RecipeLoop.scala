@@ -1,10 +1,15 @@
 package cookbook
 
+import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
+
 class RecipeLoop private extends Recipe {
+
+    val logger = Logger(LoggerFactory getLogger this.getClass)
 
     def title() = {
 
-        println("# Loop")
+        logger debug "# Loop"
 
     }
 
@@ -21,17 +26,17 @@ class RecipeLoop private extends Recipe {
         for (num <- nums) {
             results = results :+ pow(num)
         }
-        println(results)
+        logger debug results.toString
 
         // 内包表記
 
         results = for (num <- nums) yield pow(num)
-        println(results)
+        logger debug results.toString
 
         // map関数
 
         results = nums.map(num => pow(num))
-        println(results)
+        logger debug results.toString
 
     }
 

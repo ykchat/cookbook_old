@@ -1,8 +1,18 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import logging
 import threading
 import importlib;
+
+handler = logging.StreamHandler()
+handler.setFormatter(logging.Formatter(
+    "%(asctime)s [#%(process)-5s - %(threadName)-8s] %(module)s: %(levelname)-5s %(message)s"
+))
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(handler)
 
 def cook(recipes):
 
@@ -10,7 +20,7 @@ def cook(recipes):
 
         recipe_mod = importlib.import_module(recipe)
 
-        print('')
+        logger.debug('')
         recipe_mod.title()
         recipe_mod.cook()
 

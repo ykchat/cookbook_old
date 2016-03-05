@@ -1,12 +1,17 @@
 package cookbook
 
+import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
 import java.time.{ZonedDateTime, ZoneId}
+import java.time.format.DateTimeFormatter
 
 class RecipeBase private extends Recipe {
 
+    val logger = Logger(LoggerFactory getLogger this.getClass)
+
     def title() = {
 
-        println("# Base")
+        logger debug "# Base"
 
     }
 
@@ -16,15 +21,15 @@ class RecipeBase private extends Recipe {
 
         val name = "Recipe"
         val hello = s"Hello ${name}!"
-        println(hello)
+        logger debug hello
 
         // 現在時刻
 
         var now = ZonedDateTime now (ZoneId of "UTC")
-        println(now)
+        logger debug (now format DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 
         now = ZonedDateTime now (ZoneId of "Asia/Tokyo")
-        println(now)
+        logger debug (now format DateTimeFormatter.ISO_OFFSET_DATE_TIME)
 
     }
 

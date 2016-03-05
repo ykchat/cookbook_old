@@ -5,7 +5,7 @@ import logging
 
 handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter(
-    "%(asctime)s [#%(process)-5s - %(threadName)-8s] %(module)s: %(levelname)s %(message)s"
+    "%(asctime)s [#%(process)-5s - %(threadName)-8s] %(module)s: %(levelname)-5s %(message)s"
 ))
 
 logger = logging.getLogger(__name__)

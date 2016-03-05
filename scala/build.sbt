@@ -3,7 +3,14 @@ lazy val root = (project in file(".")).
         name := "cookbook",
         version := "0.0.1",
         scalaVersion := "2.11.7",
+        scalacOptions ++= Seq(
+            "-feature",
+            "-deprecation"
+        ),
         libraryDependencies ++= Seq(
-            "org.scala-lang" % "scala-reflect" % scalaVersion.value
+            "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0",
+            "ch.qos.logback" % "logback-classic" % "1.1.6",
+            "org.scala-lang" % "scala-reflect" % scalaVersion.value,
+            "org.scala-lang" % "scala-actors" % scalaVersion.value
         )
     )
