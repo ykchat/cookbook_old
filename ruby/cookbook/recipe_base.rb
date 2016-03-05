@@ -2,13 +2,20 @@
 
 module Recipe
 
+    require 'logger'
     require 'time'
 
     class << self
 
+        @@logger = Logger.new(STDOUT)
+        @@logger.level = Logger::DEBUG
+        @@logger.formatter = proc { |severity, datetime, progname, msg|
+            "#{datetime.localtime('+09:00').iso8601} [##{$$.to_s.ljust(5)} - #{Thread.current[:name].ljust(8)}] #{File.basename(__FILE__)}: #{severity} #{msg} \n"
+        }
+
         def title
 
-            puts '# Base'
+            @@logger.debug '# Base'
 
         end
 
@@ -18,15 +25,15 @@ module Recipe
 
             name = 'Recipe'
             hello = "Hello #{name}!"
-            puts hello
+            @@logger.debug hello
 
             ## 現在時刻
 
             now = Time.now.localtime '+00:00'
-            puts now
+            @@logger.debug now
 
             now = Time.now.localtime '+09:00'
-            puts now
+            @@logger.debug now
 
         end
 

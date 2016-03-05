@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+import threading
 import importlib;
 
 def cook(recipes):
@@ -14,6 +15,8 @@ def cook(recipes):
         recipe_mod.cook()
 
 if __name__ == '__main__':
+
+    threading.currentThread().name = 'main'
 
     recipes = [
         'cookbook.recipe_base',
