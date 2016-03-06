@@ -1,6 +1,7 @@
+import scala.reflect.runtime.universe.TermName
+import java.lang.management.ManagementFactory
 import com.typesafe.scalalogging.Logger
 import org.slf4j.LoggerFactory
-import scala.reflect.runtime.universe._
 
 object Cooker {
 
@@ -61,9 +62,12 @@ object Cooker {
 
     def main(args: Array[String]) {
 
+        System.setProperty("pid", ManagementFactory.getRuntimeMXBean.getName.split('@').head)
+
         val recipes = List(
             "cookbook.RecipeBase",
             "cookbook.RecipeLoop",
+            "cookbook.RecipeCommand",
             "cookbook.RecipeThread"
         )
 

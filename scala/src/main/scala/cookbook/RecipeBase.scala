@@ -1,9 +1,9 @@
 package cookbook
 
-import com.typesafe.scalalogging.Logger
-import org.slf4j.LoggerFactory
 import java.time.{ZonedDateTime, ZoneId}
 import java.time.format.DateTimeFormatter
+import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
 
 class RecipeBase private extends Recipe {
 

@@ -1,10 +1,10 @@
 package cookbook
 
-import com.typesafe.scalalogging.Logger
-import org.slf4j.LoggerFactory
 import scala.concurrent.{Future, Await}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
+import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
 
 class RecipeThread private extends Recipe {
 
@@ -22,9 +22,13 @@ class RecipeThread private extends Recipe {
 
         var threads = List[Future[Unit]]()
 
+        // スレッド開始
+
         for (sec <- secs) {
             threads = threads :+ Future { __sleep(sec) }
         }
+
+        // スレッド終了待ち
 
         for (thread <- threads) {
             Await.ready(thread, Duration.Inf)
