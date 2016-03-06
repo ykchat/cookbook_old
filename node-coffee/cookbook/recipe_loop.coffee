@@ -1,8 +1,9 @@
 #!/usr/bin/env coffee
 
+path = require 'path'
 logging = require './util/logging'
 
-logger = logging.LoggerFactory.getLogger 'recipe_loop'
+logger = logging.LoggerFactory.getLogger path.basename __filename
 
 title = ->
 

@@ -11,7 +11,7 @@ class LoggerFactory
         type: 'console'
         layout:
             type: 'pattern'
-            pattern: "%d{ISO8601_WITH_TZ_OFFSET} [#%z] %c; %-5p %m"
+            pattern: "%d{ISO8601_WITH_TZ_OFFSET} [#%z] %c: %-5p %m"
 
     @getLogger = (name) ->
 
