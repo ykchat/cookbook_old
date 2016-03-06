@@ -18,14 +18,19 @@ module Recipe
 
             commands = ['ls']
 
+            # コマンド実行
+
             commands.each do |command|
 
                 IO.popen(command) do |pipe|
-                    @@logger.debug "#{command}[##{pipe.pid}] started"
+                    # コマンドのpid取得
+                    pid = pipe.pid
+                    @@logger.debug "#{command}[##{pid}] started"
+                    # コマンド実行結果（標準出力）を取得
                     pipe.each do |line|
                         @@logger.debug line.chomp
                     end
-                    @@logger.debug "#{command}[##{pipe.pid}] ended"
+                    @@logger.debug "#{command}[##{pid}] ended"
                 end
 
             end

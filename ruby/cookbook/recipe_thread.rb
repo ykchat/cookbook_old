@@ -20,6 +20,8 @@ module Recipe
 
             threads = Array.new
 
+            # スレッド開始
+
             count = 0
             secs.each do |sec|
                 count += 1
@@ -28,6 +30,8 @@ module Recipe
                     __sleep _sec
                 end
             end
+
+            # スレッド終了待ち
 
             threads.each do |thread|
                 thread.join if thread.alive?

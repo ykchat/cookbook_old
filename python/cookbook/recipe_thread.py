@@ -17,13 +17,19 @@ def cook():
 
     threads = list()
 
+    # スレッド生成
+
     count = 0
     for sec in secs:
         count += 1
         threads.append(threading.Thread(target=__sleep, name="thread-%s" % (count), args=(sec,)))
 
+    # スレッド開始
+
     for thread in threads:
         thread.start()
+
+    # スレッド終了待ち
 
     for thread in threads:
         if thread.isAlive(): thread.join()
