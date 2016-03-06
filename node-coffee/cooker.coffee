@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-path = require 'path'
+path    = require 'path'
 logging = require './cookbook/util/logging'
 
 logger = logging.LoggerFactory.getLogger path.basename __filename 
@@ -18,8 +18,9 @@ cook = (recipes) ->
     return
 
 recipes = [
-    './cookbook/recipe_base',
+    './cookbook/recipe_base'
     './cookbook/recipe_loop'
+    './cookbook/recipe_command'
 ]
 
 cook recipes

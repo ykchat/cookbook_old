@@ -18,6 +18,6 @@ cook = function(recipes) {
   }
 };
 
-recipes = ['./cookbook/recipe_base', './cookbook/recipe_loop'];
+recipes = ['./cookbook/recipe_base', './cookbook/recipe_loop', './cookbook/recipe_command'];
 
 cook(recipes);

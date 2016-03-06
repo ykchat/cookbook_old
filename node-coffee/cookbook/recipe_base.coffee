@@ -1,7 +1,7 @@
 #!/usr/bin/env coffee
 
-moment = require 'moment-timezone'
-path = require 'path'
+moment  = require 'moment-timezone'
+path    = require 'path'
 logging = require './util/logging'
 
 logger = logging.LoggerFactory.getLogger path.basename __filename
