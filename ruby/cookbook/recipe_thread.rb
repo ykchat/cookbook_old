@@ -2,11 +2,11 @@
 
 module Recipe
 
-    require 'logger'
+    require './cookbook/util/logging'
 
     class << self
 
-        @@logger = LoggerFactory.getLogger(File.basename(__FILE__))
+        @@logger = LoggerFactory.getLogger File.basename __FILE__
 
         def title
 
@@ -25,7 +25,7 @@ module Recipe
                 count += 1
                 threads << Thread.new(count, sec) do |_count, _sec|
                     Thread.current[:name] = "thread-#{_count}"
-                    __sleep(_sec)
+                    __sleep _sec
                 end
             end
 

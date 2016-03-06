@@ -2,12 +2,12 @@
 
 module Recipe
 
-    require 'logger'
     require 'time'
+    require './cookbook/util/logging'
 
     class << self
 
-        @@logger = LoggerFactory.getLogger(File.basename(__FILE__))
+        @@logger = LoggerFactory.getLogger File.basename __FILE__
 
         def title
 

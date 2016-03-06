@@ -2,11 +2,11 @@
 
 module Recipe
 
-    require 'logger'
+    require './cookbook/util/logging'
 
     class << self
 
-        @@logger = LoggerFactory.getLogger(File.basename(__FILE__))
+        @@logger = LoggerFactory.getLogger File.basename __FILE__
 
         def title
 
@@ -39,7 +39,7 @@ module Recipe
 
             ## map関数
 
-            results = nums.map{|num| pow(num)}
+            results = nums.map{ |num| pow num }
             @@logger.debug results.to_s
 
         end

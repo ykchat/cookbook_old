@@ -4,7 +4,7 @@ require './cookbook/util/logging'
 
 def cook recipes
 
-    logger =  LoggerFactory.getLogger(File.basename(__FILE__))
+    logger = LoggerFactory.getLogger File.basename __FILE__
 
     recipes.each do |recipe|
 
@@ -25,6 +25,7 @@ if __FILE__ == $0
     recipes = [
         './cookbook/recipe_base',
         './cookbook/recipe_loop',
+        './cookbook/recipe_command',
         './cookbook/recipe_thread'
     ]
 
