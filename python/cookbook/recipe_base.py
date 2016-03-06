@@ -1,18 +1,11 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import logging
-import datetime;
+import datetime
 import pytz
+from cookbook.util.logging import LoggerFactory
 
-handler = logging.StreamHandler()
-handler.setFormatter(logging.Formatter(
-    "%(asctime)s [#%(process)-5s - %(threadName)-8s] %(module)s: %(levelname)-5s %(message)s"
-))
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-logger.addHandler(handler)
+logger = LoggerFactory.getLogger(__name__)
 
 def title():
 

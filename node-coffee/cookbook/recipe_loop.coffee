@@ -1,8 +1,12 @@
 #!/usr/bin/env coffee
 
+logging = require './util/logging'
+
+logger = logging.LoggerFactory.getLogger 'recipe_loop'
+
 title = ->
 
-    console.log '# Loop'
+    logger.debug '# Loop'
 
     return
 
@@ -17,18 +21,18 @@ cook = ->
     results = []
     for num in nums
         results.push pow num
-    console.log results
+    logger.debug results
 
     ## 内包表記
 
     results = (pow num for num in nums)
-    console.log results
+    logger.debug results
 
     ## map関数
 
     results = nums.map (num) -> 
         return pow num
-    console.log results
+    logger.debug results
 
     return
 

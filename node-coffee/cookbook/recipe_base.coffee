@@ -1,10 +1,13 @@
 #!/usr/bin/env coffee
 
 moment = require 'moment-timezone'
+logging = require './util/logging'
+
+logger = logging.LoggerFactory.getLogger 'recipe_base'
 
 title = ->
 
-    console.log '# Base'
+    logger.debug '# Base'
 
     return
 
@@ -14,15 +17,15 @@ cook = ->
 
     name = 'Recipe'
     hello = "Hello #{name}!"
-    console.log hello
+    logger.debug hello
 
     ## 現在時刻
 
     now = moment().utc()
-    console.log now.format()
+    logger.debug now.format()
 
     now = moment().tz 'Asia/Tokyo'
-    console.log now.format()
+    logger.debug now.format()
 
     return
 

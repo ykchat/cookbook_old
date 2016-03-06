@@ -1,12 +1,16 @@
 #!/usr/bin/env coffee
 
+logging = require './cookbook/util/logging'
+
+logger = logging.LoggerFactory.getLogger 'cookbook'
+
 cook = (recipes) ->
 
     for recipe in recipes
 
         recipe_mod = require recipe
 
-        console.log ''
+        logger.debug ''
         recipe_mod.title()
         recipe_mod.cook()
 
@@ -18,4 +22,3 @@ recipes = [
 ]
 
 cook recipes
-
