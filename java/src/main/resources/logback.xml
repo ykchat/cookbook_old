@@ -1,0 +1,13 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{ISO8601} [#%-5property{pid} - %-24t] %c: %-5p %msg%n</pattern>
+    </encoder>
+  </appender>
+ 
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>

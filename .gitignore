@@ -4,6 +4,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+env/
+
+# ruby
+
+Gemfile.lock
+
 # nodejs
 
 build/
@@ -11,6 +17,10 @@ node_modules/
 
 # java/scala
 
+.gradle/
+build/
+
 project/
 target/
+
 *.class
