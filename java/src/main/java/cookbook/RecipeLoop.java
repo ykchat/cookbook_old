@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class RecipeLoop implements Recipe {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(RecipeBase.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RecipeLoop.class);
 
     public void title() {
 
@@ -28,7 +28,7 @@ public class RecipeLoop implements Recipe {
         // for文
 
         List<Integer> results = new ArrayList<>();
-        for(Integer num: nums) {
+        for(int num: nums) {
             results.add(pow.apply(num));
         }
         LOGGER.debug(results.toString());

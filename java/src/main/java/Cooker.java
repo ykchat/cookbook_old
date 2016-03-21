@@ -45,7 +45,8 @@ public class Cooker {
         List<String> recipes = Arrays.asList(
             "cookbook.RecipeBase",
             "cookbook.RecipeLoop",
-            "cookbook.RecipeCommand"
+            "cookbook.RecipeCommand",
+            "cookbook.RecipeThread"
         );
 
         Cooker.cook(recipes);
