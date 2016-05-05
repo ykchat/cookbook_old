@@ -16,24 +16,20 @@ class RecipeCommand private extends Recipe {
 
     def cook() = {
 
-        val commands = List("ls")
+        val command = "ls"
 
         // コマンド実行
 
-        for (command <- commands) {
-
-            val proc = Process(command)
-            // コマンドのpid取得
-            // -> 現在pidを取得するAPIがない
-            // See also http://stackoverflow.com/questions/23279898/
-            logger debug s"${command} started"
-            // コマンド実行結果（標準出力）を取得
-            for (line <- proc.lineStream) {
-                logger debug line
-            }
-            logger debug s"${command} ended"
-
+        val proc = Process(command)
+        // コマンドのpid取得
+        // -> 現在pidを取得するAPIがない
+        // See also http://stackoverflow.com/questions/23279898/
+        logger debug s"${command} started"
+        // コマンド実行結果（標準出力）を取得
+        for (line <- proc.lineStream) {
+            logger debug line
         }
+        logger debug s"${command} ended"
 
     }
 

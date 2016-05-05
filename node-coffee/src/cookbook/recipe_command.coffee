@@ -13,28 +13,27 @@ title = ->
 
     return
 
-cook = ->
+cook = -> new Promise (resolve) ->
 
-    commands = ['ls']
+    command = 'ls'
 
-    # コマンド実行
+    ## コマンド実行
 
-    for command in commands
-
-        proc = child_process.spawn command
-        # コマンドのpid取得
-        pid = proc.pid
-        logger.debug "#{command}[##{pid}] started"
-        # コマンド実行結果（標準出力）を取得
-        pipe = readline.createInterface
-            input: proc.stdout
-            terminal: false
-        pipe.on 'line', (line) ->
-            logger.debug line
-            return
-        proc.on 'close', (code, signal) ->
-            logger.debug "#{command}[##{pid}] ended"
-            return
+    proc = child_process.spawn command
+    ## コマンドのpid取得
+    pid = proc.pid
+    logger.debug "#{command}[##{pid}] started"
+    ## コマンド実行結果（標準出力）を取得
+    pipe = readline.createInterface
+        input: proc.stdout
+        terminal: false
+    pipe.on 'line', (line) ->
+        logger.debug line
+        return
+    proc.on 'close', (code, signal) ->
+        logger.debug "#{command}[##{pid}] ended"
+        resolve()
+        return
 
     return
 

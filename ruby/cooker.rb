@@ -25,6 +25,7 @@ if __FILE__ == $0
     recipes = [
         './cookbook/recipe_base',
         './cookbook/recipe_loop',
+        './cookbook/recipe_file',
         './cookbook/recipe_command',
         './cookbook/recipe_thread'
     ]

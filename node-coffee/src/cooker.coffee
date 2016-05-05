@@ -1,11 +1,12 @@
 #!/usr/bin/env coffee
 
+co = require 'co'
 path    = require 'path'
 logging = require './cookbook/util/logging'
 
 logger = logging.LoggerFactory.getLogger path.basename __filename 
 
-cook = (recipes) ->
+cook = co.wrap (recipes) -> 
 
     for recipe in recipes
 
@@ -13,13 +14,14 @@ cook = (recipes) ->
 
         logger.debug ''
         recipe_mod.title()
-        recipe_mod.cook()
+        yield recipe_mod.cook()
 
     return
 
 recipes = [
     './cookbook/recipe_base'
     './cookbook/recipe_loop'
+    './cookbook/recipe_file'
     './cookbook/recipe_command'
 ]
 

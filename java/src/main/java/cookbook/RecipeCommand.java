@@ -20,36 +20,32 @@ public class RecipeCommand implements Recipe {
 
     public void cook() {
 
-        List<String> commands = Arrays.asList("ls");
+        String command = "ls";
 
         // コマンド実行
 
-        for(String command: commands) {
+        ProcessBuilder builder = new ProcessBuilder(command);
 
-            ProcessBuilder builder = new ProcessBuilder(command);
+        try {
 
-            try {
-
-                Process proc = builder.start();
-                // コマンドのpid取得
-                // -> 現在pidを取得するAPIがない
-                // See also http://stackoverflow.com/questions/4750470/
-                LOGGER.debug("{} started", command);
-                // コマンド実行結果（標準出力）を取得
-                BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    LOGGER.debug(line);
-                }
-                proc.waitFor();
-                LOGGER.debug("{} ended", command);
-
-            } catch (IOException ex) {
-                LOGGER.error(ex.getMessage(), ex);
-            } catch (InterruptedException ex) {
-                LOGGER.error(ex.getMessage(), ex);
+            Process proc = builder.start();
+            // コマンドのpid取得
+            // -> 現在pidを取得するAPIがない
+            // See also http://stackoverflow.com/questions/4750470/
+            LOGGER.debug("{} started", command);
+            // コマンド実行結果（標準出力）を取得
+            BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                LOGGER.debug(line);
             }
+            proc.waitFor();
+            LOGGER.debug("{} ended", command);
 
+        } catch (IOException ex) {
+            LOGGER.error(ex.getMessage(), ex);
+        } catch (InterruptedException ex) {
+            LOGGER.error(ex.getMessage(), ex);
         }
 
     }

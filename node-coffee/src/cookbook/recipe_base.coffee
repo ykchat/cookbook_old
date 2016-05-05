@@ -12,7 +12,7 @@ title = ->
 
     return
 
-cook = ->
+cook = -> new Promise (resolve) -> 
 
     ## 変数展開
 
@@ -27,6 +27,8 @@ cook = ->
 
     now = moment().tz 'Asia/Tokyo'
     logger.debug now.format()
+
+    resolve()
 
     return
 

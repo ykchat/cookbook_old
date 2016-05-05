@@ -67,6 +67,7 @@ object Cooker {
         val recipes = List(
             "cookbook.RecipeBase",
             "cookbook.RecipeLoop",
+            "cookbook.RecipeFile",
             "cookbook.RecipeCommand",
             "cookbook.RecipeThread"
         )

@@ -11,7 +11,7 @@ title = ->
 
     return
 
-cook = ->
+cook = -> new Promise (resolve) -> 
 
     nums = [0...5]
     pow = (x) -> 
@@ -34,6 +34,8 @@ cook = ->
     results = nums.map (num) -> 
         return pow num
     logger.debug results
+
+    resolve()
 
     return
 

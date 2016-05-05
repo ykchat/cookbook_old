@@ -13,22 +13,20 @@ def title():
 
 def cook():
 
-    commands = ['ls']
+    command = 'ls'
 
     # コマンド実行
 
-    for command in commands:
-
-        proc = Popen(command.split(' '), stdout=PIPE)
-        # コマンドのpid取得
-        pid = proc.pid
-        logger.debug("%s[#%s] started" % (command, pid))
-        # コマンド実行結果（標準出力）を取得
-        pipe = proc.stdout
-        for line in pipe.readlines():
-            logger.debug(line.rstrip().decode(sys.stdin.encoding))
-        pipe.close()
-        logger.debug("%s[#%s] ended" % (command, pid))
+    proc = Popen(command.split(' '), stdout=PIPE)
+    # コマンドのpid取得
+    pid = proc.pid
+    logger.debug("%s[#%s] started" % (command, pid))
+    # コマンド実行結果（標準出力）を取得
+    pipe = proc.stdout
+    for line in pipe.readlines():
+        logger.debug(line.rstrip().decode(sys.stdin.encoding))
+    pipe.close()
+    logger.debug("%s[#%s] ended" % (command, pid))
 
 if __name__ == '__main__':
 

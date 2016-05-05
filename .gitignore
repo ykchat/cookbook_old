@@ -24,3 +24,7 @@ project/
 target/
 
 *.class
+
+# Mac
+
+.DS_Store
