@@ -10,8 +10,9 @@ repositories {
 
 dependencies {
     compile (
-        [group: 'org.slf4j', name : 'slf4j-api', version: '1.7.19'],
-        [group: 'ch.qos.logback', name : 'logback-classic', version: '1.1.6']
+        [group: 'org.slf4j', name : 'slf4j-api', version: '1.7.21'],
+        [group: 'ch.qos.logback', name : 'logback-classic', version: '1.1.7'],
+        [group: 'com.fasterxml.jackson.core', name : 'jackson-databind', version: '2.7.4']
     )
 }
 

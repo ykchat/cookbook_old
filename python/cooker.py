@@ -26,7 +26,8 @@ if __name__ == '__main__':
         'cookbook.recipe_loop',
         'cookbook.recipe_file',
         'cookbook.recipe_command',
-        'cookbook.recipe_thread'
+        'cookbook.recipe_thread',
+        'cookbook.recipe_http'
     ]
 
     cook(recipes)

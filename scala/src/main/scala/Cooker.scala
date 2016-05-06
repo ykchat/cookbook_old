@@ -69,7 +69,8 @@ object Cooker {
             "cookbook.RecipeLoop",
             "cookbook.RecipeFile",
             "cookbook.RecipeCommand",
-            "cookbook.RecipeThread"
+            "cookbook.RecipeThread",
+            "cookbook.RecipeHttp"
         )
 
         Cooker cook recipes

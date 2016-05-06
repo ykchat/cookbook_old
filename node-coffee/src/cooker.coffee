@@ -23,6 +23,7 @@ recipes = [
     './cookbook/recipe_loop'
     './cookbook/recipe_file'
     './cookbook/recipe_command'
+    './cookbook/recipe_http'
 ]
 
 cook recipes

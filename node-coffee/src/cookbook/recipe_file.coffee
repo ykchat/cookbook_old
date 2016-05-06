@@ -1,9 +1,9 @@
 #!/usr/bin/env coffee
 
-fs = require 'fs'
+fs       = require 'fs'
 readline = require 'readline'
-path    = require 'path'
-logging = require './util/logging'
+path     = require 'path'
+logging  = require './util/logging'
 
 logger = logging.LoggerFactory.getLogger path.basename __filename
 

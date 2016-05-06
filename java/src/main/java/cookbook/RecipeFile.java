@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class RecipeFile implements Recipe {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(RecipeBase.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RecipeFile.class);
 
     public void title() {
 
@@ -73,7 +73,7 @@ public class RecipeFile implements Recipe {
 
     public static void main(String[] args) throws Exception {
 
-        Recipe recipe = new RecipeBase();
+        Recipe recipe = new RecipeFile();
 
         recipe.title();
         recipe.cook();
